@@ -7,6 +7,8 @@ export default defineConfig({
     open: true,
   },
   plugins: [react()],
+  base: '/descent/',          // ← CHANGE THIS
+  // If your repo is named exactly yourusername.github.io, use base: '/' or remove this line
 })
 
 

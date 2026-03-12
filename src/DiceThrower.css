@@ -160,6 +160,8 @@ body {
   height: calc(100% - 2px);
   object-fit: contain;
   border-radius: 8px;
+  aspect-ratio: 1/1;
+  will-change: opacity, transform;
 }
 
 .dice .question-mark {

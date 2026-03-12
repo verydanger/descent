@@ -324,6 +324,7 @@ export default function DiceThrower() {
               {dice.value !== null ? (
                 <img 
                   src={`${import.meta.env.BASE_URL}img/${dice.color}${dice.value}.png`}
+                  loading="eager"
                 />
               ) : (
                 <span className="question-mark">?</span>

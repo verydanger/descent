@@ -1,5 +1,5 @@
 // DiceThrowerNew.tsx
-import { useState, useMemo, useRef } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import './DiceThrower.css';
 
 // Pure dice color names
@@ -41,6 +41,16 @@ export default function DiceThrower() {
 
   // Use ref for stable, synchronous ID generation
   const nextIdRef = useRef(1);
+
+  // Preload all dice images at startup
+  useEffect(() => {
+    DICE_COLORS.forEach(color => {
+      for (let i = 1; i <= 6; i++) {
+        const img = new Image();
+        img.src = `${import.meta.env.BASE_URL}img/${color}${i}.png`;
+      }
+    });
+  }, []);
 
   const addDice = (color: DiceColor) => {
     const id = nextIdRef.current++;
